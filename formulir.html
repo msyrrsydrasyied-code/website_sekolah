@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Pendaftaran Siswa Baru (Demo) — SMA Nusantara Unggul</title>
+  <meta name="description" content="Simulasi formulir pendaftaran siswa baru online SMA Nusantara Unggul untuk keperluan demonstrasi tugas sekolah.">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Lompat ke konten utama</a>
+
+  <!-- ========================================== -->
+  <!-- NAVBAR HEADER                              -->
+  <!-- ========================================== -->
+  <header id="main-navbar" class="navbar-header">
+    <div class="container">
+      <div class="nav-inner">
+        
+        <!-- School Brand Identity -->
+        <a href="index.html" class="brand" aria-label="Beranda SMA Nusantara Unggul">
+          <div class="brand-logo-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+              <path d="M12 14l9-5-9-5-9 5 9 5zm0 0v6"></path>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">SMA NUSANTARA UNGGUL</span>
+            <span class="brand-subtitle">Sekolah Menengah Atas</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="desktop-nav" aria-label="Navigasi Utama">
+          <a href="index.html" class="nav-link">Beranda</a>
+          <a href="profil.html" class="nav-link">Profil Sekolah</a>
+          <a href="index.html#fasilitas" class="nav-link">Fasilitas</a>
+          <a href="index.html#kabar" class="nav-link">Kabar Sekolah</a>
+          <a href="pendaftaran.html" class="nav-link">Info Pendaftaran</a>
+        </nav>
+
+        <!-- Desktop Action CTA -->
+        <div class="nav-action-desktop">
+          <a href="formulir.html" class="btn btn-primary btn-active-state">
+            <span>Daftar Sekarang</span>
+            <svg class="btn-arrow-shift" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-button" type="button" class="hamburger-btn" aria-expanded="false" aria-label="Buka Menu Navigasi">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="mobile-drawer">
+      <a href="index.html" class="mobile-nav-link">Beranda</a>
+      <a href="profil.html" class="mobile-nav-link">Profil Sekolah</a>
+      <a href="index.html#fasilitas" class="mobile-nav-link">Fasilitas Belajar</a>
+      <a href="index.html#kabar" class="mobile-nav-link">Kabar Sekolah</a>
+      <a href="pendaftaran.html" class="mobile-nav-link">Info Pendaftaran</a>
+      <div class="mobile-drawer-cta">
+        <a href="formulir.html" class="btn btn-primary btn-block btn-active-state">
+          <span>Daftar Sekarang</span>
+          <svg class="btn-arrow-shift" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- MAIN CONTENT                               -->
+  <!-- ========================================== -->
+  <main id="main-content">
+
+    <!-- 1. BREADCRUMB & HEADER SECTION -->
+    <section class="section-sm bg-soft border-b">
+      <div class="container-narrow">
+        
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <a href="index.html">Beranda</a>
+          <span class="separator">&rsaquo;</span>
+          <a href="pendaftaran.html">Info Pendaftaran</a>
+          <span class="separator">&rsaquo;</span>
+          <span class="current">Formulir Demo</span>
+        </nav>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+            <span class="badge badge-warning-soft">
+              <span class="dot-indicator dot-orange"></span>
+              Simulasi Formulir — Tanpa Database
+            </span>
+            <span class="badge badge-primary-soft">
+              Tugas Sekolah
+            </span>
+          </div>
+
+          <h1 style="font-size: 26px; line-height: 1.25; margin-top: 4px;">
+            Formulir Pendaftaran Siswa Baru (Simulasi)
+          </h1>
+
+          <p style="font-size: 13.5px; color: var(--text-sub); line-height: 1.6;">
+            Halaman ini merupakan simulasi alur pendaftaran siswa baru untuk demonstrasi antarmuka website sekolah. Data yang dimasukkan hanya divalidasi pada sesi peramban ini dan tidak disimpan secara permanen.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. FORMULIR CONTAINER -->
+    <section class="section bg-white">
+      <div class="container-narrow">
+
+        <!-- Simulation Success Receipt Card (Hidden by default, shown by JS on valid submit) -->
+        <div id="simulation-success" class="simulation-success-card">
+          
+          <div class="success-header-row">
+            <div class="success-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div>
+              <span class="badge badge-success-soft" style="margin-bottom: 4px;">Berhasil Divalidasi</span>
+              <h2>Simulasi Pengisian Formulir Berhasil!</h2>
+              <p style="font-size: 13px; color: var(--text-sub); margin-top: 4px;">
+                Seluruh isian formulir telah lolos validasi sistem antarmuka. Terima kasih telah mencoba demonstrasi pendaftaran daring SMA Nusantara Unggul.
+              </p>
+            </div>
+          </div>
+
+          <!-- Notice Box -->
+          <div class="success-notice-box">
+            <strong style="color: var(--text-main); display: block; margin-bottom: 4px;">
+              Pemberitahuan Sistem Demonstrasi:
+            </strong>
+            Karena website ini dirancang khusus untuk demonstrasi tugas sekolah tanpa basis data server, <strong>data Anda tidak disimpan secara permanen</strong> dan tidak ada nomor registrasi resmi yang diterbitkan.
+          </div>
+
+          <!-- Summary Data Card -->
+          <div class="preview-summary-card">
+            <h3>Ringkasan Data yang Dikirim (Demonstrasi):</h3>
+            
+            <div class="preview-grid">
+              <div>
+                <span class="preview-label">Nama Lengkap Calon Siswa:</span>
+                <span id="preview-nama" class="preview-value"></span>
+              </div>
+              <div>
+                <span class="preview-label">Tempat & Tanggal Lahir:</span>
+                <span id="preview-ttl" class="preview-value"></span>
+              </div>
+              <div>
+                <span class="preview-label">Jenis Kelamin:</span>
+                <span id="preview-jk" class="preview-value"></span>
+              </div>
+              <div>
+                <span class="preview-label">Asal Sekolah & Kelulusan:</span>
+                <span id="preview-sekolah" class="preview-value"></span>
+              </div>
+              <div class="preview-col-span-2">
+                <span class="preview-label">Alamat Tempat Tinggal:</span>
+                <span id="preview-alamat" class="preview-value"></span>
+              </div>
+              <div>
+                <span class="preview-label">Nama Orang Tua / Wali:</span>
+                <span id="preview-wali" class="preview-value"></span>
+              </div>
+              <div>
+                <span class="preview-label">Nomor Telepon:</span>
+                <span id="preview-telp" class="preview-value"></span>
+              </div>
+              <div>
+                <span class="preview-label">Alamat Email:</span>
+                <span id="preview-email" class="preview-value"></span>
+              </div>
+              <div>
+                <span class="preview-label">Pilihan Peminatan:</span>
+                <span id="preview-program" class="preview-value highlight"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Success Actions -->
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+            <button id="btn-reset-form" type="button" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <polyline points="23 20 23 14 17 14"></polyline>
+                <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path>
+              </svg>
+              <span>Isi Formulir Lagi</span>
+            </button>
+            <a href="pendaftaran.html" class="btn btn-outline">
+              Kembali ke Info Pendaftaran
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Active Form Section -->
+        <div id="form-section">
+          
+          <!-- General Error Alert Box (Hidden by default) -->
+          <div id="form-alert-top" class="form-alert-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <div>
+              <strong>Mohon periksa kembali isian formulir Anda:</strong>
+              <p style="margin-top: 2px;">Terdapat beberapa kolom wajib yang belum diisi atau tidak sesuai ketentuan format.</p>
+            </div>
+          </div>
+
+          <form id="registration-form" novalidate>
+            
+            <!-- BAGIAN A: DATA CALON SISWA -->
+            <div class="form-card">
+              <div class="form-card-header">
+                <div class="section-letter-badge badge-a">A</div>
+                <div>
+                  <h2>Data Calon Siswa</h2>
+                  <p>Identitas pribadi calon peserta didik sesuai dokumen resmi.</p>
+                </div>
+              </div>
+
+              <!-- 1. Nama Lengkap -->
+              <div class="form-group">
+                <label for="nama_lengkap" class="form-label">
+                  Nama Lengkap Calon Siswa <span class="required-star">*</span>
+                </label>
+                <input type="text" id="nama_lengkap" name="nama_lengkap" class="form-control" placeholder="Masukkan nama lengkap sesuai ijazah SMP/MTs">
+                <div id="error-nama_lengkap" class="error-text">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span class="error-msg-text">Nama lengkap calon siswa wajib diisi.</span>
+                </div>
+              </div>
+
+              <!-- 2. Tempat & Tanggal Lahir -->
+              <div class="form-grid-2 form-group">
+                <div>
+                  <label for="tempat_lahir" class="form-label">
+                    Tempat Lahir <span class="required-star">*</span>
+                  </label>
+                  <input type="text" id="tempat_lahir" name="tempat_lahir" class="form-control" placeholder="Contoh: Jakarta">
+                  <div id="error-tempat_lahir" class="error-text">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span class="error-msg-text">Tempat lahir wajib diisi.</span>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="tanggal_lahir" class="form-label">
+                    Tanggal Lahir <span class="required-star">*</span>
+                  </label>
+                  <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control">
+                  <div id="error-tanggal_lahir" class="error-text">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span class="error-msg-text">Tanggal lahir wajib diisi.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. Jenis Kelamin -->
+              <div id="group-jenis_kelamin" class="form-group">
+                <span class="form-label">
+                  Jenis Kelamin <span class="required-star">*</span>
+                </span>
+                <div class="radio-group">
+                  <label class="radio-card">
+                    <input type="radio" name="jenis_kelamin" value="Laki-laki">
+                    <span style="font-weight: 700; font-size: 13.5px; color: var(--text-main);">Laki-laki</span>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="jenis_kelamin" value="Perempuan">
+                    <span style="font-weight: 700; font-size: 13.5px; color: var(--text-main);">Perempuan</span>
+                  </label>
+                </div>
+                <div id="error-jenis_kelamin" class="error-text">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span class="error-msg-text">Silakan pilih jenis kelamin.</span>
+                </div>
+              </div>
+
+              <!-- 4. Alamat Tempat Tinggal -->
+              <div class="form-group">
+                <label for="alamat" class="form-label">
+                  Alamat Tempat Tinggal <span class="required-star">*</span>
+                </label>
+                <textarea id="alamat" name="alamat" class="form-textarea" placeholder="Masukkan alamat lengkap tempat tinggal (jalan, nomor rumah, RT/RW, kelurahan, kecamatan, kota)"></textarea>
+                <div id="error-alamat" class="error-text">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span class="error-msg-text">Alamat tempat tinggal wajib diisi.</span>
+                </div>
+              </div>
+
+              <!-- 5. Asal Sekolah & Tahun Lulus -->
+              <div class="form-grid-2 form-group">
+                <div>
+                  <label for="asal_sekolah" class="form-label">
+                    Asal Sekolah (SMP / MTs) <span class="required-star">*</span>
+                  </label>
+                  <input type="text" id="asal_sekolah" name="asal_sekolah" class="form-control" placeholder="Contoh: SMP Negeri 1 Jakarta">
+                  <div id="error-asal_sekolah" class="error-text">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span class="error-msg-text">Asal sekolah (SMP/MTs) wajib diisi.</span>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="tahun_lulus" class="form-label">
+                    Tahun Kelulusan SMP <span class="required-star">*</span>
+                  </label>
+                  <input type="text" id="tahun_lulus" name="tahun_lulus" class="form-control" placeholder="Contoh: 2026" maxlength="4" value="2026">
+                  <div id="error-tahun_lulus" class="error-text">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span class="error-msg-text">Tahun kelulusan harus 4 digit angka (contoh: 2026).</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- BAGIAN B: DATA ORANG TUA / WALI -->
+            <div class="form-card">
+              <div class="form-card-header">
+                <div class="section-letter-badge badge-b">B</div>
+                <div>
+                  <h2>Data Orang Tua / Wali</h2>
+                  <p>Informasi kontak orang tua atau wali untuk korespondensi resmi.</p>
+                </div>
+              </div>
+
+              <!-- 6. Nama Orang Tua / Wali -->
+              <div class="form-group">
+                <label for="nama_wali" class="form-label">
+                  Nama Orang Tua atau Wali <span class="required-star">*</span>
+                </label>
+                <input type="text" id="nama_wali" name="nama_wali" class="form-control" placeholder="Nama lengkap ayah, ibu, atau wali murid">
+                <div id="error-nama_wali" class="error-text">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span class="error-msg-text">Nama orang tua atau wali wajib diisi.</span>
+                </div>
+              </div>
+
+              <!-- 7. Nomor Telepon & Email -->
+              <div class="form-grid-2 form-group">
+                <div>
+                  <label for="nomor_telepon" class="form-label">
+                    Nomor Telepon / WhatsApp <span class="required-star">*</span>
+                  </label>
+                  <input type="tel" id="nomor_telepon" name="nomor_telepon" class="form-control" placeholder="Contoh: 081234567890">
+                  <div id="error-nomor_telepon" class="error-text">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span class="error-msg-text">Nomor telepon wajib diisi (minimal 10 digit).</span>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="email" class="form-label">
+                    Alamat Email <span style="font-weight: 400; color: var(--text-sub);">(Opsional)</span>
+                  </label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="nama@email.com">
+                  <div id="error-email" class="error-text">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span class="error-msg-text">Format alamat email tidak valid.</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- BAGIAN C: PEMINATAN & KONFIRMASI SIMULASI -->
+            <div class="form-card">
+              <div class="form-card-header">
+                <div class="section-letter-badge badge-c">C</div>
+                <div>
+                  <h2>Peminatan & Konfirmasi Simulasi</h2>
+                  <p>Pilihan peminatan belajar dan persetujuan pengisian data demo.</p>
+                </div>
+              </div>
+
+              <!-- 8. Program Pilihan -->
+              <div class="form-group">
+                <label for="program_pilihan" class="form-label">
+                  Pilihan Program / Peminatan <span class="required-star">*</span>
+                </label>
+                <select id="program_pilihan" name="program_pilihan" class="form-select">
+                  <option value="" disabled selected>-- Pilih Peminatan Pembelajaran --</option>
+                  <option value="MIPA">MIPA (Matematika & Ilmu Pengetahuan Alam)</option>
+                  <option value="IPS">IPS (Ilmu Pengetahuan Sosial)</option>
+                  <option value="Bahasa & Budaya">Bahasa & Budaya</option>
+                </select>
+                <div id="error-program_pilihan" class="error-text">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span class="error-msg-text">Silakan pilih peminatan pembelajaran.</span>
+                </div>
+              </div>
+
+              <!-- 9. Checkbox Persetujuan -->
+              <div class="form-group">
+                <label id="checkbox-card-persetujuan" class="checkbox-card">
+                  <input type="checkbox" id="persetujuan_simulasi" name="persetujuan_simulasi">
+                  <span style="font-size: 13px; line-height: 1.6; color: var(--text-main);">
+                    Saya memahami dan menyetujui bahwa pengisian formulir ini merupakan <strong>simulasi antarmuka untuk tugas sekolah</strong>. Data yang diisikan tidak disimpan ke dalam database secara permanen dan tidak menggantikan pendaftaran resmi sekolah. <span class="required-star">*</span>
+                  </span>
+                </label>
+                <div id="error-persetujuan_simulasi" class="error-text">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span class="error-msg-text">Anda wajib mencentang persetujuan simulasi sebelum mengirimkan data.</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Form Action Buttons -->
+            <div class="form-actions">
+              <a href="pendaftaran.html" class="btn btn-outline">
+                &larr; Kembali ke Info Pendaftaran
+              </a>
+              <button type="submit" class="btn btn-primary">
+                <span>Kirim Pendaftaran (Simulasi)</span>
+                <svg class="btn-arrow-shift" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- FOOTER                                     -->
+  <!-- ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="footer-col">
+          <a href="index.html" class="brand" style="padding-left: 0;">
+            <div class="brand-logo-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-title">SMA NUSANTARA UNGGUL</span>
+              <span class="brand-subtitle">Jakarta</span>
+            </div>
+          </a>
+          <p class="footer-desc">Lembaga pendidikan menengah yang berdedikasi mencetak generasi muda cerdas, berkarakter mulia, dan siap menghadapi tantangan masa depan.</p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-col">
+          <h3>Navigasi Halaman</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil.html">Profil Sekolah</a></li>
+            <li><a href="pendaftaran.html">Info Pendaftaran</a></li>
+            <li><a href="formulir.html">Formulir Pendaftaran (Demo)</a></li>
+            <li><a href="index.html#keunggulan">Keunggulan Sekolah</a></li>
+            <li><a href="index.html#fasilitas">Fasilitas Belajar</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Placeholder -->
+        <div class="footer-col">
+          <h3>Kontak (Data Contoh)</h3>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span>Jl. Pendidikan Raya No. 88, Cilandak, Jakarta Selatan 12430 (Contoh Alamat)</span>
+            </li>
+            <li class="footer-contact-item">
+              <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 5a2 2 0 012-2h32a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path>
+              </svg>
+              <span>(021) 789-0123 (Contoh Telepon)</span>
+            </li>
+            <li class="footer-contact-item">
+              <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              <span>info@smanusantaraunggul.sch.id (Contoh Email)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Office Hours -->
+        <div class="footer-col">
+          <h3>Jam Pelayanan</h3>
+          <div class="hours-box">
+            <div class="hours-row">
+              <span>Senin – Kamis:</span>
+              <strong style="color: var(--text-main);">07:00 – 15:30</strong>
+            </div>
+            <div class="hours-row">
+              <span>Jumat:</span>
+              <strong style="color: var(--text-main);">07:00 – 14:30</strong>
+            </div>
+            <div class="hours-row">
+              <span>Sabtu & Minggu:</span>
+              <span class="hours-closed">Tutup</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 SMA Nusantara Unggul. Hak Cipta Dilindungi.</p>
+        <p style="font-size: 11px; color: var(--text-sub);">Kontak dan informasi di atas merupakan data contoh untuk keperluan demo tugas sekolah.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/formulir.js"></script>
+</body>
+</html>
+
